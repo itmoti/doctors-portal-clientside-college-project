@@ -29,7 +29,7 @@ const Footer = () => {
           <Link to={'/'} className="link link-hover">Cookie policy</Link>
         </div>
       </footer>
-      <div className='text-center mt-7'>
+      <div className='text-center mt-7 my-5'>
         <p>Copyright 2022 All Right Reserved</p>
       </div>
         </section>
