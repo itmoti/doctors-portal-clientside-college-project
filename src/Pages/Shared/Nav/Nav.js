@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import  { UserContext } from '../../../Context/AuthContext';
 
 const Nav = () => {
+  const {user , logOut} = useContext(UserContext)
+  const handleLogout = () => {
+    logOut()
+    .then(() => {})
+     .catch(err => console.log(err))
+  } 
+  const [togleBtn , setTogglebtn] = useState(true)
+  if(!togleBtn) {
+    document.documentElement.setAttribute("data-theme" , "dark")
+  }
+  else {
+    document.documentElement.setAttribute("data-theme" , "light")
+
+  }
+
+  console.log(togleBtn)
     const navLink = <>
       <li><Link to='/'>Home</Link></li>
       <li><Link to=''>About</Link></li>
       <li><Link to='/appoinments'>Appoinments</Link></li>
       <li><Link to=''>Reviews</Link></li>
       <li><Link to=''>Contact Us</Link></li>
-      <li><Link to='/login'>Login</Link></li>
-      <li><Link to='/signup'>Signup</Link></li>
+  
+     {user?.uid ?<>
+      <li><Link to='/dashboard'>Dashboard</Link></li>
+     
+     <li><button onClick={handleLogout}>Logout</button></li> </> : <> <li><Link to='/login'>Login</Link></li>
+      <li><Link to='/signup'>Signup</Link></li></>}
+     <p>LIght</p>  <input type="checkbox" className="toggle mx-2" onClick={() => setTogglebtn(!togleBtn)}  /> <p>Dark</p>
     </>
     return (
         <div className="navbar bg-base-100">

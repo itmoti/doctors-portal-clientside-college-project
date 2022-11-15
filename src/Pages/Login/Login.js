@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../Context/AuthContext';
 
 const Login = () => {
+    const {signIn} = useContext(UserContext)
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [loginError , setLoginError] = useState('')
+    const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathName || '/'
 
     const handleLogin = data => {
-        console.log(data)
-        console.log(errors)
+        setLoginError('')
+        console.log(data.email , data.password)
+        signIn( data.email , data.password)
+        .then(result=> {console.log(result)
+        navigate(from , {replace : true})
+        })
+        .catch(err => {
+            console.log(err)
+            setLoginError(err.message)
+        })
+     
     }
     return (
         <div className=' h-[800px] flex justify-center items-center text-center '>
@@ -17,9 +32,10 @@ const Login = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
                         <input 
-                        {...register("Email" , {required : "Email Address is required" }) }
+                        {...register("email" , {required : "Email Address is required" }) }
                          className="input input-bordered w-full max-w-xs" />
-                            {errors.Email && <p className='text-error'>{errors.Email?.message}</p>}
+                            {errors.email && <p className='text-error'>{errors.email?.message}</p>}
+                          
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>
@@ -35,6 +51,7 @@ const Login = () => {
                             Forget Password? </label>
                     </div>
                     <input className="btn btn-active mx-auto btn-wide" value={'Login'} type="submit" />
+                    {loginError && <p className='text-error'>{loginError}</p>}
                 </form>
                 <p>New to Doctors Portal? <Link className='text-secondary' to={'/signup'}>Create New Account</Link></p>
                 <div className="divider">OR</div>
