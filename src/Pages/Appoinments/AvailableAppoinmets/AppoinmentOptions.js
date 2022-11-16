@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../../Context/AuthContext';
 
 const AppoinmentOptions = ({ availableAppoinments  , setTreatment }) => {
+const navigate = useNavigate();
+
   const { name, slots } = availableAppoinments
+  const {user } = useContext(UserContext)
+  const handleBook = (availableAppoinments)=> {
+  
+  
+    if(!user?.email) {
+      navigate('/login')
+    }
+    setTreatment(availableAppoinments)
+ 
+  }
   return (
     <div>
       <div className="card w-96 bg-base-100  text-center shadow-xl">
@@ -14,7 +28,9 @@ const AppoinmentOptions = ({ availableAppoinments  , setTreatment }) => {
             <label
             disabled = {slots.length  ===0}
          
-            onClick={() => setTreatment(availableAppoinments)} htmlFor="booking-modal" className="btn btn-secondary text-white">Book Appoinments</label>
+            onClick={() => { handleBook( availableAppoinments) 
+             }
+              } htmlFor="booking-modal" className="btn btn-secondary text-white">Book Appoinments</label>
           </div>
         </div>
       </div>

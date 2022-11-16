@@ -4,11 +4,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/AuthContext';
 
 const Login = () => {
-    const {signIn} = useContext(UserContext)
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const {signIn , passwordReset} = useContext(UserContext)
+    const { register, formState: { errors }, handleSubmit   , getValues } = useForm();
     const [loginError , setLoginError] = useState('')
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
     let from = location.state?.from?.pathName || '/'
 
     const handleLogin = data => {
@@ -22,7 +22,18 @@ const Login = () => {
             console.log(err)
             setLoginError(err.message)
         })
+
+   
      
+    }
+   
+    
+    const handlePasswordChange = () => {
+        const email = getValues("email")
+        passwordReset(email) 
+        .then(() => {})
+        .catch(err => console.log(err))
+      
     }
     return (
         <div className=' h-[800px] flex justify-center items-center text-center '>
@@ -47,7 +58,7 @@ const Login = () => {
 
                           className="input input-bordered w-full max-w-xs" />
                            {errors.Password && <p className='text-error'>{errors.Password?.message}</p>}
-                        <label className=" label label-text-alt">
+                        <label onClick={handlePasswordChange} className=" label label-text-alt">
                             Forget Password? </label>
                     </div>
                     <input className="btn btn-active mx-auto btn-wide" value={'Login'} type="submit" />
