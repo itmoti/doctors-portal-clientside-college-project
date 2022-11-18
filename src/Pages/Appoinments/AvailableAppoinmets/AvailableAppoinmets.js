@@ -28,7 +28,7 @@ if(isLoading) {
            <p className='text-secondary text-xl font-bold text-center'> Available Appointments on {format(selectedNewDate , 'PP')}</p>
              <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
                
-             {availableAppoinments.map(options => <AppoinmentOptions
+             {availableAppoinments?.map(options => <AppoinmentOptions
                key={options._id}
                availableAppoinments = {options}
                setTreatment = {setTreatment}

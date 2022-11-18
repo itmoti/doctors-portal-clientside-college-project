@@ -25,7 +25,7 @@ const AuthContext = ({ children }) => {
     const updateFullProfile = (information) => {
         setLoading(true)
 
-        updateProfile(auth.currentUser ,information )
+      return  updateProfile(auth.currentUser ,information )
     }
     const passwordReset = ( email) => {
         return sendPasswordResetEmail(auth , email)

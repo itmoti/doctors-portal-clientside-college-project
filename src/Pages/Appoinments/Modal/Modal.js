@@ -1,7 +1,6 @@
 import { format } from 'date-fns';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import PrimaryButton from '../../../Components/PrimaryButton';
 import { UserContext } from '../../../Context/AuthContext';
 
 const Modal = ({ treatment, selectedNewDate, setTreatment, refetch }) => {
