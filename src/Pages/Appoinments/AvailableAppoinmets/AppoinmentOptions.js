@@ -5,7 +5,7 @@ import { UserContext } from '../../../Context/AuthContext';
 const AppoinmentOptions = ({ availableAppoinments  , setTreatment }) => {
 const navigate = useNavigate();
 
-  const { name, slots } = availableAppoinments
+  const { name, slots , price } = availableAppoinments
   const {user } = useContext(UserContext)
   const handleBook = (availableAppoinments)=> {
   
@@ -23,6 +23,7 @@ const navigate = useNavigate();
           <h2 className="card-title block text-secondary text-center">{name}</h2>
           <p>{slots.length > 0 ? slots[0] : 'Try another day'}</p>
           <p>{slots.length} {slots.length > 0 ? 'spaces' : 'space'} available</p>
+          <p>Price : ${price}</p>
           <div className="card-actions justify-center ">
 
             <label

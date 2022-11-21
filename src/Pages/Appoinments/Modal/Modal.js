@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { UserContext } from '../../../Context/AuthContext';
 
 const Modal = ({ treatment, selectedNewDate, setTreatment, refetch }) => {
-    const { name: treatmentName, slots } = treatment; // treatment is appoinments option with different name
+    const { name: treatmentName, slots , price } = treatment; // treatment is appoinments option with different name
     const { user } = useContext(UserContext)
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -21,6 +21,7 @@ const Modal = ({ treatment, selectedNewDate, setTreatment, refetch }) => {
             slot,
             email,
             number,
+            price 
         }
         console.log(booking)
 
