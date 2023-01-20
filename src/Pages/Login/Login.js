@@ -5,7 +5,7 @@ import { UserContext } from '../../Context/AuthContext';
 import UseToken from '../../Hooks/UseToken';
 
 const Login = () => {
-    const {signIn , passwordReset} = useContext(UserContext)
+    const {signIn , passwordReset,googleSignIn} = useContext(UserContext)
     const { register, formState: { errors }, handleSubmit   , getValues } = useForm();
     const [loginError , setLoginError] = useState('');
     const [loginUserEmail , setLoginUserEmail] = useState('')
@@ -43,6 +43,10 @@ const Login = () => {
         .catch(err => console.log(err))
       
     }
+  const   handleGoogleSignIn = () => {
+    setLoginError('')
+    googleSignIn();
+  }
     return (
         <div className=' h-[800px] flex justify-center items-center text-center '>
             <div className='w-96 p-7'>
@@ -74,7 +78,7 @@ const Login = () => {
                 </form>
                 <p>New to Doctors Portal? <Link className='text-secondary' to={'/signup'}>Create New Account</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline btn-accent w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline btn-accent w-full'>CONTINUE WITH GOOGLE</button>
             </div>
 
         </div>

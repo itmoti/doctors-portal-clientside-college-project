@@ -31,7 +31,7 @@ const Nav = () => {
      
      <li><button onClick={handleLogout}>Logout</button></li> </> : <> <li><Link to='/login'>Login</Link></li>
       <li><Link to='/signup'>Signup</Link></li></>}
-     <p>LIght</p>  <input type="checkbox" className="toggle mx-2" onClick={() => setTogglebtn(!togleBtn)}  /> <p>Dark</p>
+     <li><p>Light</p>  <input type="checkbox" className="toggle mx-2 my-auto" onClick={() => setTogglebtn(!togleBtn)}  /> <p>Dark</p></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -55,7 +55,7 @@ const Nav = () => {
           </ul>
         </div>
         
-        <label  htmlFor="dashboardDrawer" tabIndex={1} className="btn btn-ghost lg:hidden">
+        <label  htmlFor="dashboardDrawer" tabIndex={1} className="btn btn-ghost mr-0 navbar-end lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
       </div>

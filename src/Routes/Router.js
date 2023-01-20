@@ -5,6 +5,7 @@ import Appoinments from "../Pages/Appoinments/Appoinments/Appoinments";
 import AppoinmentsCopy from "../Pages/AppoinmentsCopy/Appoinments/Appoinments";
 import AddDoctor from "../Pages/Dashboard/AddDoctor/AddDoctor";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import Bookings from "../Pages/Dashboard/Bookings/Bookings";
 import ManageDoctors from "../Pages/Dashboard/ManageDoctors/ManageDoctors";
 import MyAppoinments from "../Pages/Dashboard/MyAppoinemts/MyAppoinments";
 import Payment from "../Pages/Dashboard/Payment/Payment";
@@ -67,6 +68,10 @@ export const router = createBrowserRouter(
                 {
                     path : '/dashboard/managedoctors' , 
                     element : <AdminRouter><ManageDoctors></ManageDoctors></AdminRouter>
+                } , 
+                {
+                    path : '/dashboard/allBookings' , 
+                    element : <AdminRouter><Bookings></Bookings></AdminRouter>
                 } , 
                 {
                     path : '/dashboard/payment/:id' , 

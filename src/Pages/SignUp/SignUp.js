@@ -13,7 +13,7 @@ if(token) {
     navigate('/')
 }
 
-    const {signup , updateFullProfile} = useContext(UserContext)
+    const {signup , updateFullProfile , googleSignIn}  = useContext(UserContext)
  
     const { register, handleSubmit, formState: { errors } } = useForm()
     const handleSignUp = data => {
@@ -53,6 +53,10 @@ if(token) {
            setCreatedUserEmail(email)
         })
     }
+    const   handleGoogleSignIn = () => {
+        
+        googleSignIn();
+      }
 
     
     return (
@@ -99,7 +103,7 @@ if(token) {
                 </form>
                 <p>Already Have an Account? <Link className='text-secondary' to={'/Login'}>Login</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline btn-accent w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline btn-accent w-full'>CONTINUE WITH GOOGLE</button>
             </div>
 
         </div>

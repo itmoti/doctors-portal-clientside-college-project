@@ -15,7 +15,7 @@ const MyAppoinments = () => {
         })
             .then(res => res.json())
     })
-  
+  console.log(appoinments?.length)
     return (
         <div>
 
@@ -32,7 +32,16 @@ const MyAppoinments = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {appoinments?.map((appoinment, i) => <tr key={appoinment._id}>
+                    {
+                        appoinments?.length === 0 
+                        ?
+                      <tr>
+                         <td colSpan={6}>
+                         <h1 className='text-center text-2xl font-bold italic'>Please take an appointment</h1>
+                         </td>
+                      </tr>
+                             :
+                    appoinments?.map((appoinment, i) => <tr key={appoinment._id}>
                         <th>{i + 1}</th>
                         <td>{appoinment.name}</td>
                         <td>{appoinment.treatment}</td>
