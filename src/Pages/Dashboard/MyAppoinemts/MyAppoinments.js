@@ -20,49 +20,57 @@ const MyAppoinments = () => {
         <div>
 
             <table className="table w-full">
+                {
+                    
+            appoinments?.length === 0 
+            ?
+          <tr>
+             <td colSpan={6}>
+             <h1 className='text-center text-2xl font-bold italic my-4'>Please take an <Link className='text-primary' to={'/appoinments'}>appointment</Link></h1>
+             </td>
+          </tr>
+                 :
 
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Treatment</th>
-                        <th>Date </th>
-                        <th>Time </th>
-                        <th>Payment </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        appoinments?.length === 0 
-                        ?
-                      <tr>
-                         <td colSpan={6}>
-                         <h1 className='text-center text-2xl font-bold italic'>Please take an appointment</h1>
-                         </td>
-                      </tr>
-                             :
-                    appoinments?.map((appoinment, i) => <tr key={appoinment._id}>
-                        <th>{i + 1}</th>
-                        <td>{appoinment.name}</td>
-                        <td>{appoinment.treatment}</td>
-                        <td>{appoinment.appointmentDate}</td>
-                        <td>{appoinment.slot}</td>
-                        <td>
-                            
-                            {appoinment.price
-                            && !appoinment.paid &&
-                             <Link to={`/dashboard/payment/${appoinment._id}`}>
-                                <button className='btn btn-primary'>Pay</button>
-                             </Link>
-                            }
-                            {
-                                appoinment.price && appoinment.paid && <span className='text-primary'>Paid</span>
-                            }
+                <>
+                 <thead>
+                 <tr>
+                     <th></th>
+                     <th>Name</th>
+                     <th>Treatment</th>
+                     <th>Date </th>
+                     <th>Time </th>
+                     <th>Payment </th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {
+                   
+                 appoinments?.map((appoinment, i) => <tr key={appoinment._id}>
+                     <th>{i + 1}</th>
+                     <td>{appoinment.name}</td>
+                     <td>{appoinment.treatment}</td>
+                     <td>{appoinment.appointmentDate}</td>
+                     <td>{appoinment.slot}</td>
+                     <td>
+                         
+                         {appoinment.price
+                         && !appoinment.paid &&
+                          <Link to={`/dashboard/payment/${appoinment._id}`}>
+                             <button className='btn btn-primary'>Pay</button>
+                          </Link>
+                         }
+                         {
+                             appoinment.price && appoinment.paid && <span className='text-primary'>Paid</span>
+                         }
+         
+                           </td>
+                 </tr>)}
+         
+             </tbody>
+   
+                </>
 
-                              </td>
-                    </tr>)}
-
-                </tbody>
+                }
             </table>
         </div>
 

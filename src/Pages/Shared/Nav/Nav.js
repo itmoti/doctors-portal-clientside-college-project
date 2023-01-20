@@ -21,10 +21,10 @@ const Nav = () => {
   console.log(togleBtn)
     const navLink = <>
       <li><Link to='/'>Home</Link></li>
-      <li><Link to=''>About</Link></li>
+      <li><Link to='/about'>About</Link></li>
       <li><Link to='/appoinments'>Appoinments</Link></li>
-      <li><Link to=''>Reviews</Link></li>
-      <li><Link to=''>Contact Us</Link></li>
+     
+      <li><Link to='/contactus'>Contact Us</Link></li>
   
      {user?.uid ?<>
       <li><Link to='/dashboard'>Dashboard</Link></li>

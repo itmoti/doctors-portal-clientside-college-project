@@ -48,7 +48,7 @@ const Login = () => {
     googleSignIn();
   }
     return (
-        <div className=' h-[800px] flex justify-center items-center text-center '>
+        <div className=' h-[auto] flex justify-center items-center text-center '>
             <div className='w-96 p-7'>
                 <h2 className='font-bold text-center text-2xl'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>

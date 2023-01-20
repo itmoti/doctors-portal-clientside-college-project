@@ -1,0 +1,117 @@
+[debug] [2023-01-20T19:55:29.674Z] ----------------------------------------------------------------------
+[debug] [2023-01-20T19:55:29.676Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-20T19:55:29.676Z] CLI Version:   11.16.1
+[debug] [2023-01-20T19:55:29.676Z] Platform:      win32
+[debug] [2023-01-20T19:55:29.676Z] Node Version:  v16.15.1
+[debug] [2023-01-20T19:55:29.680Z] Time:          Sat Jan 21 2023 01:55:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-01-20T19:55:29.681Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-20T19:55:29.685Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-01-20T19:55:29.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-20T19:55:29.703Z] > authorizing via signed-in user (motiarrahman9707@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\88017\Desktop\web Development\Doctors-Club
+
+[debug] [2023-01-20T19:55:30.583Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-01-20T19:55:30.583Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2023-01-20T19:56:45.948Z] > refreshing access token with scopes: []
+[debug] [2023-01-20T19:56:45.949Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-20T19:56:45.949Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-20T19:56:46.401Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-01-20T19:56:46.401Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-20T19:56:46.407Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-01-20T19:56:46.407Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"collegeProjectsDoctorsClub","name":"College Project Doctors Club"}
+[debug] [2023-01-20T19:56:48.140Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-01-20T19:56:48.140Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-01-20T19:56:48.649Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at responseToError (C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-01-20T19:59:29.908Z] ----------------------------------------------------------------------
+[debug] [2023-01-20T19:59:29.909Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-20T19:59:29.910Z] CLI Version:   11.21.0
+[debug] [2023-01-20T19:59:29.910Z] Platform:      win32
+[debug] [2023-01-20T19:59:29.910Z] Node Version:  v16.15.1
+[debug] [2023-01-20T19:59:29.913Z] Time:          Sat Jan 21 2023 01:59:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-01-20T19:59:29.914Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-20T19:59:29.921Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-20T19:59:29.921Z] > authorizing via signed-in user (motiarrahman9707@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\88017\Desktop\web Development\Doctors-Club
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2023-01-20T20:00:06.726Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-01-20T20:00:06.726Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"collegeProjectsDoctorsClub","name":"Doctors Club College Project"}
+[debug] [2023-01-20T20:00:08.246Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-01-20T20:00:08.246Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-01-20T20:00:08.549Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at responseToError (C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-01-20T20:00:34.852Z] ----------------------------------------------------------------------
+[debug] [2023-01-20T20:00:34.853Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\88017\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-20T20:00:34.854Z] CLI Version:   11.21.0
+[debug] [2023-01-20T20:00:34.854Z] Platform:      win32
+[debug] [2023-01-20T20:00:34.854Z] Node Version:  v16.15.1
+[debug] [2023-01-20T20:00:34.855Z] Time:          Sat Jan 21 2023 02:00:34 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-01-20T20:00:34.855Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-20T20:00:34.861Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-20T20:00:34.862Z] > authorizing via signed-in user (motiarrahman9707@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\88017\Desktop\web Development\Doctors-Club
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-01-20T20:00:45.845Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-01-20T20:00:47.072Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-01-20T20:00:47.072Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

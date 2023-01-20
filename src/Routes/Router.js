@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
+import About from "../Pages/About/About";
 import Appoinments from "../Pages/Appoinments/Appoinments/Appoinments";
 import AppoinmentsCopy from "../Pages/AppoinmentsCopy/Appoinments/Appoinments";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 import AddDoctor from "../Pages/Dashboard/AddDoctor/AddDoctor";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import Bookings from "../Pages/Dashboard/Bookings/Bookings";
@@ -45,6 +47,14 @@ export const router = createBrowserRouter(
                 {
                     path: '/appointmentsCopy'
                     , element: <AppoinmentsCopy></AppoinmentsCopy>
+                },
+                {
+                    path: '/about'
+                    , element: <About></About>
+                },
+                {
+                    path: '/contactus'
+                    , element: <ContactUs></ContactUs>
                 }
             ]
         },
